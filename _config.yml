@@ -1,0 +1,85 @@
+### SITE SETTINGS
+title: "Andrew Stiefel"
+tagline: "@andrewstiefel"
+description: "Hey, I'm Andrew Stiefel. Welcome to my digital garden, a slowly growing collection of ideas in the form of working notes and narrative essays."
+url: "https://andrewstiefel.com"
+timezone: "America/Los_Angeles"
+
+### SITE AUTHOR
+author:
+  name: "Andrew Stiefel"
+  url: "https://andrewstiefel.com"
+  linkedin: "andrewstiefel"
+  github: "andrewstiefel"
+
+# OPEN GRAPH IMAGE SETTINGS
+cloudinary:
+  cloud_name: andrewstiefel
+  only_prod: true
+  presets:
+    default:
+      min_width: 320
+      max_width: 1450
+      fallback_max_width: 725
+      steps: 5
+      sizes: "(min-width: 50rem) 50rem, 90vw"
+ogImageBackground: "/assets/img/og-background.png"
+
+### BUILD & PLUGIN SETTINGS
+markdown: kramdown
+highlighter: rouge
+permalink: "/:title/"
+include:
+  - "_pages"
+
+plugins:
+  - jekyll-archives
+  - jekyll-last-modified-at
+  - jekyll-sitemap
+  - jekyll-target-blank
+  - jekyll-tailwindcss
+  - jekyll-tidy
+
+### DEFAULTS
+defaults:
+  - scope:
+      path: ""       # Empty string for all files
+      type: "posts"  # Limit to posts
+    values:
+      is_post: true  # Automatically set is_post=true for all posts
+
+### JEKYLL TAILWINDCSS SETTINGS
+tailwindcss:
+  css_path: "./assets/css/_tailwind.css"
+
+### JEKYLL ARCHIVE SETTINGS
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layout: archive
+  permalinks:
+    category: "/:name/"
+    tag: "/topics/:name/"
+
+### JEKYLL TIDY SETTINGS
+jekyll_tidy:
+  exclude:
+    - "feed.xml"
+    - "feed-*.xml"
+    - "assets/js/bundle.js"
+    - "llms.txt"
+
+### EXCLUSIONS
+exclude:
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "gulpfile.babel.js"
+  - "LICENSE.md"
+  - "node_modules"
+  - ".obsidian"
+  - "package.json"
+  - "package-lock.json"
+  - "README.md"
+  - "tailwind.config.js"
+  - "netlify.toml"
